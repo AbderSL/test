@@ -14,48 +14,18 @@
     "content": {
         "page1": {
           "title": "MBC 1",
-          "url": "https://abdersl.github.io/MBCLIVE/1.htm",
-          "img": "https://abdersl.github.io/MBCLIVE/1.jpg"
+          "url": "https://abdersl.github.io/test/1.htm",
+          "img": "https://www.freepngimg.com/thumb/light/20347-4-light-transparent-image.png"
         },
         "page2": {
           "title": "MBC 2",
-          "url": "https://abdersl.github.io/MBCLIVE/1.html",
-          "img": "https://abdersl.github.io/MBCLIVE/1.jpg"
+          "url": "https://abdersl.github.io/test/2.html",
+          "img": "https://www.freepngimg.com/thumb/light/20347-4-light-transparent-image.png"
         },
         "page3": {
           "title": "MBC ACTION",
-          "url": "https://abdersl.github.io/MBCLIVE/1.html",
-          "img": "https://abdersl.github.io/MBCLIVE/1.jpg"
-        },
-        "page4": {
-          "title": "MBC 3",
-          "url": "https://abdersl.github.io/MBCLIVE/1.html",
-          "img": "https://abdersl.github.io/MBCLIVE/1.jpg"
-        },
-        "page5": {
-          "title": "MBC 4",
-          "url": "https://abdersl.github.io/MBCLIVE/1.html",
-          "img": "https://abdersl.github.io/MBCLIVE/1.jpg"
-        },
-        "page6": {
-          "title": "MBC 5",
-          "url": "https://abdersl.github.io/MBCLIVE/1.html",
-          "img": "https://abdersl.github.io/MBCLIVE/1.jpg"
-        },
-        "page7": {
-          "title": "MBC Bollyood",
-          "url": "https://abdersl.github.io/MBCLIVE/1.html",
-          "img": "https://abdersl.github.io/MBCLIVE/1.jpg"
-        },
-        "page8": {
-          "title": "MBC MASR",
-          "url": "https://abdersl.github.io/MBCLIVE/1.html",
-          "img": "https://abdersl.github.io/MBCLIVE/1.jpg"
-        },
-        "page9": {
-          "title": "MBC DRAMA",
-          "url": "https://abdersl.github.io/MBCLIVE/1.html",
-          "img": "hhttps://abdersl.github.io/MBCLIVE/1.jpg"
+          "url": "https://abdersl.github.io/test/.html",
+          "img": "https://www.freepngimg.com/thumb/light/20347-4-light-transparent-image.png"
 
         }
       }
