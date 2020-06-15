@@ -1,0 +1,65 @@
+{
+    "app": {
+        "name": "Lulu-box guide",
+        "color": "#008577"
+    },
+    
+    
+    "ads":{
+        "bannerId": "ca-app-pub-4795636117292694/2195786560",
+        "interstitialId": "-app-pub-4795636117292694/5668467026"
+    },
+    
+    
+    "content": {
+        "page1": {
+          "title": "Trailer",
+          "url": "https://abdersl.github.io/PS5/1.htm",
+          "img": "https://www.freepngimg.com/thumb/animation/88486-television-behavior-wallpaper-question-desktop-human-highdefinition.png"
+        },
+        "page2": {
+          "title": "PS5  name as evidence",
+          "url": "https://abdersl.github.io/PS5/2.html",
+          "img": "https://www.freepngimg.com/thumb/animation/88486-television-behavior-wallpaper-question-desktop-human-highdefinition.png"
+        },
+        "page3": {
+          "title": "Data sheet",
+          "url": "https://abdersl.github.io/PS5/3.html",
+          "img": "https://www.freepngimg.com/thumb/animation/88486-television-behavior-wallpaper-question-desktop-human-highdefinition.png"
+        },
+        "page4": {
+          "title": "What release date for PS5",
+          "url": "https://abdersl.github.io/PS5/4.html",
+          "img": "https://www.freepngimg.com/thumb/animation/88486-television-behavior-wallpaper-question-desktop-human-highdefinition.png"
+        },
+        "page5": {
+          "title": "The design of the PS5",
+          "url": "https://abdersl.github.io/PS5/5.html",
+          "img": "https://www.freepngimg.com/thumb/animation/88486-television-behavior-wallpaper-question-desktop-human-highdefinition.png"
+        },
+        "page6": {
+          "title": "A brand new controller",
+          "url": "https://abdersl.github.io/PS5/6.html",
+          "img": "https://www.freepngimg.com/thumb/animation/88486-television-behavior-wallpaper-question-desktop-human-highdefinition.png"
+        },
+        "page7": {
+          "title": "Price Of PS5",
+          "url": "https://abdersl.github.io/PS5/7.html",
+          "img": "https://www.freepngimg.com/thumb/animation/88486-television-behavior-wallpaper-question-desktop-human-highdefinition.png"
+        },
+        "page8": {
+          "title": "The Games",
+          "url": "https://abdersl.github.io/PS5/8.html",
+          "img": "https://www.freepngimg.com/thumb/animation/88486-television-behavior-wallpaper-question-desktop-human-highdefinition.png"
+        
+        },
+        "page9": {
+          "title": "Good Luck!",
+          "url": "https://abdersl.github.io/PS5/Good.html",
+          "img": "https://www.freepngimg.com/thumb/star/8-yellow-star-png-image-thumb.png"
+
+        }
+
+        }
+      }
+}
