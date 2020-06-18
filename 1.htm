@@ -1,23 +1,20 @@
- <html>
+<!-- CSS  -->
+ <link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet">
 
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Live</title>
-    <script src="hls.min.js" type="application/javascript"></script>
-  </head>
-  <body>
-    <video controls="" width="100%" max-width="800%" muted="" loop="" autoplay="" ></video>
-    <script>
-      ((source) => {
-        if (typeof Hls == "undefined") return console.error("HLS Not Found");
-        if (!document.querySelector("video")) return;
-        var hls = new Hls();
-        hls.loadSource(source);
-        hls.attachMedia(document.querySelector("video"));
-      })("https://streaming.medi1tv.com/live/Medi1tvArabia.sdp/chunklist_w1703407756.m3u8");
-    </script>
 
-  </body>
-  </html>
+<!-- HTML -->
+<video id='hls-example'  class="video-js vjs-default-skin" width="400" height="300" controls>
+<source type="application/x-mpegURL" src="https://cdnamd-hls-globecast.akamaized.net/live/ramdisk/2m_monde/hls_video_ts/2m_monde-avc1_1500000=4-mp4a_130400_qad=1.m3u8">
+</video>
+
+
+<!-- JS code -->
+<!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+<script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.js"></script>
+<script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
+
+<script>
+var player = videojs('hls-example');
+player.play();
+</script>
