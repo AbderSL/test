@@ -1,20 +1,40 @@
-<!-- CSS  -->
- <link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet">
-
-
-<!-- HTML -->
-<video id='hls-example'  class="video-js vjs-default-skin" width="400" height="300" controls>
-<source type="application/x-mpegURL" src="http://dmisxthvll.cdn.mangomolo.com/dubaitv/smil:dubaitv.stream.smil/chunklist_b1500000.m3u8">
-</video>
-
-
-<!-- JS code -->
-<!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
-<script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.js"></script>
-<script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
-
-<script>
-var player = videojs('hls-example');
-player.play();
+<html>
+<head>
+  <script src="hls.min.js"></script>
+  <style>
+    body{
+      background-color:black;
+    }
+    #video{
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      margin: auto;
+      max-height: 100%;
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <video id="video" style="width: 100%; height: 100%;" controls></video>
+  <script>
+ function playM3u8(url){
+  if(Hls.isSupported()) {
+      var video = document.getElementById('video');
+      video.volume = 1.0;
+      var hls = new Hls();
+      var m3u8Url = decodeURIComponent(url)
+      hls.loadSource(m3u8Url);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED,function() {
+        video.play();
+      });
+      document.title = url
+    }
+}
+playM3u8 ("https://cdnamd-hls-globecast.akamaized.net/live/ramdisk/2m_monde/hls_video_ts/2m_monde-avc1_1500000=4-mp4a_130400_qad=1.m3u8");
 </script>
+</body>
+</html>
