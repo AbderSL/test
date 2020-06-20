@@ -1,23 +1,17 @@
- <html>
-
-    <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Live</title>
-    <script src="hls.min.js" type="application/javascript"></script>
-  </head>
-  <body>
-    <video controls="" width="100%" max-width="800%" muted="" loop="" autoplay="" ></video>
-    <script>
-      ((source) => {
-        if (typeof Hls == "undefined") return console.error("HLS Not Found");
-        if (!document.querySelector("video")) return;
-        var hls = new Hls();
-        hls.loadSource(source);
-        hls.attachMedia(document.querySelector("video"));
-      })("https://streaming.medi1tv.com/live/Medi1tvmaghreb.sdp/chunklist_w1473812765.m3u8");
-    </script>
-
-  </body>
-  </html>
+    <title>Live Streaming</title>
+    <link href="//vjs.zencdn.net/5.8/video-js.min.css" rel="stylesheet">
+    <script src="//vjs.zencdn.net/5.8/video.min.js"></script>
+</head>
+<body>
+<video id="player" class="video-js vjs-default-skin" height="360" width="640" controls preload="none">
+    <source src="https://shls-mbc1ksa-prod.shahid.net/mbc1ksa-prod.m3u8" type="application/x-mpegURL" />
+</video>
+<script>
+    var player = videojs('#player');
+</script>
+</body>
+</html>
