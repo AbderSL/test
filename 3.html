@@ -1,8 +1,22 @@
-  <body>
-    <video controls="" width="100%" max-width="800%" muted="" loop="" autoplay="" 
-	src="https://cdnamd-hls-globecast.akamaized.net/live/ramdisk/2m_monde/hls_video_ts/2m_monde-avc1_1500000=4-mp4a_130400_qad=1.m3u8"></video>
-    <script>
-<script>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>24 TV CANLI YAYIN</title>
+  
+
+  <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+  <script src="https://unpkg.com/video.js/dist/video.js"></script>
+  <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+   
+</head>
+<body>
+  <video id="my_video_1" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+  data-setup='{}'>
+    <source src="http://siyatv.herokuapp.com/https://shls-mbc3-prod.shahid.net/mbc3-prod_5.m3u8" type="application/x-mpegURL">
+  </video>
+  
+		<script>
 class VideoPlayerController {
   constructor(element) {
     this.$container = element
@@ -156,3 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 })
 </script>
+  
+</body>
+</html>
