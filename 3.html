@@ -16,160 +16,55 @@
     <source src="http://siyatv.herokuapp.com/https://shls-mbc3-prod.shahid.net/mbc3-prod_5.m3u8" type="application/x-mpegURL">
   </video>
   
-		<script>
-class VideoPlayerController {
-  constructor(element) {
-    this.$container = element
-
-    if (!this.$container) {
-      console.error('Video container not found. Aborting initialization.')
-      return
-    }
-
-    this.$imgContainer = this.$container.querySelector('.js-video-tile-image')
-    this.$vidContainer = this.$container.querySelector('.js-video-element')
-
-    this.userControls = false
-
-    if (!this.$imgContainer || !this.$vidContainer) {
-      console.error('Video element and/or preview image not found. Aborting.')
-      return
-    }
-
-    this.handlePlay = this.handlePlay.bind(this)
-    this.parsed = false
-
-    this.init()
-  }
-
-  init() {
-    this.$vidContainer.addEventListener('click', (e) => {
-      /**
-       * Having script interaction interfers with playing/pausing as well
-       * as toggling native UI elements
-       */
-      if (!this.userControls) {
-        // Prevent default to avoid play/pause duplication
-        e.preventDefault()
-        this.handlePlay()
-      }
-    })
-
-    this.$vidContainer.addEventListener('ended', () => {
-      VideoPlayerController.showImage(this.$imgContainer)
-      // We need to remove the controls again to make the event listener
-      // work properly in Firefox
-      this.$vidContainer.removeAttribute('controls')
-      // Hand back control to this class
-      this.userControls = false
-    })
-  }
-
-  handlePlay() {
-    // Make the script return if interactions occur while playing the video
-    this.userControls = true
-
-    // Attributes had to be missing from the rendered source to register
-    // the click in Firefox
-    this.$vidContainer.setAttribute('controls', 'true')
-
-    // Set focus() to allow toggling the play state via keyboard in Chrome
-    // Safari does not allow focussing the video event with tabindex, but
-    // native keyboard multimedia controls work
-    // Firefox sets the focus automatically
-    this.$vidContainer.focus()
-
-    try {
-      const hlsSupported = VideoPlayerController.hlsSupported()
-
-      if (hlsSupported || this.parsed) {
-        this.playVideo()
-      } else {
-        const { Hls } = window
-
-        if (Hls) {
-          this.parseHlsManifest()
-        } else {
-          VideoPlayerController.loadLibrary().then(() => {
-            this.parseHlsManifest()
-          })
+<script>
+      (function() {
+        function loadScript(url, onLoad) {
+          var s = document.createElement("script");
+          s.setAttribute('src', url);
+          if (onLoad) {
+            s.onload = onLoad;
+          }
+          document.body.appendChild(s);
         }
-      }
-    } catch (error) {
-      console.error(error)
-    }
-  }
 
-  playVideo() {
-    console.log('HLS – Playing video')
-    VideoPlayerController.hideImage(this.$imgContainer)
-    this.$vidContainer.play().then(() => {
-      console.log('HLS - Video played')
-    })
-  }
+        var LOCAL_DIST_SRC = 'src/hls.js';
+        //var LATEST_DIST_SRC = 'https://cdn.jsdelivr.net/npm/hls.js@latest';
+	var LATEST_DIST_SRC = 'hls.js@latest';
+        var LOCAL_DEMO_SRC = 'src/hls-demo.js';
+        //var CANARY_DEMO_SRC = 'https://cdn.jsdelivr.net/npm/hls.js@canary/dist/hls-demo.js';
+	var CANARY_DEMO_SRC = 'hls-demo.js';
+        var queryParts = window.location.search.substring(1).split('&');
+        var src = null;
+        var demoSrc = null;
+        if (queryParts.indexOf('version=latest') >= 0) {
+          src = LATEST_DIST_SRC;
+          demoSrc = CANARY_DEMO_SRC;
+        } else if (queryParts.indexOf('version=canary') >= 0 || queryParts.indexOf('canary=true') >= 0) {
+          src = 'https://cdn.jsdelivr.net/npm/hls.js@canary';
+          demoSrc = CANARY_DEMO_SRC;
+        } else if (queryParts.indexOf('version=local') >= 0) {
+          src = LOCAL_DIST_SRC;
+          demoSrc = LOCAL_DEMO_SRC;
+        }
+        if (!src) {
+          if (window.location.port) {
+            // we are not on port 80/443. Probably running locally. default to local
+            src = LOCAL_DIST_SRC;
+            demoSrc = LOCAL_DEMO_SRC;
+          } else {
+            src = LATEST_DIST_SRC;
+            demoSrc = CANARY_DEMO_SRC;
+          }
+        }
 
-  parseHlsManifest() {
-    console.log('HLS – Parsing video manifest')
-    const { Hls } = window
-    const hls = new Hls()
-    const { src } = this.$vidContainer
-
-    hls.loadSource(src)
-    hls.attachMedia(this.$vidContainer)
-    hls.on(Hls.Events.MANIFEST_PARSED, () => {
-      this.parsed = true
-      this.playVideo()
-    })
-  }
-
-  static loadLibrary() {
-    return new Promise((resolve, reject) => {
-      const $s = document.createElement('script')
-      $s.src =
-        'https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.light.min.js'
-
-      $s.onload = () => {
-        resolve()
-      }
-
-      $s.onerror = () => {
-        reject('Failed to load HLS library')
-      }
-
-      document.head.appendChild($s)
-    })
-  }
-
-  static hideImage($img) {
-    $img.classList.add('video-container__image--hidden')
-  }
-
-  static showImage($img) {
-    $img.classList.remove('video-container__image--hidden')
-  }
-
-  static hlsSupported() {
-    const $vid = document.createElement('video')
-
-    return (
-      $vid.canPlayType('application/x-mpegURL codecs="avc1.42E01E"') ||
-      $vid.canPlayType('application/vnd.apple.mpegurl')
-    )
-  }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  const $videoContainers = document.querySelectorAll(
-    '.js-inline-video-container'
-  )
-
-  if ($videoContainers) {
-    Array.from($videoContainers).forEach(($container) => {
-      new VideoPlayerController($container)
-    })
-  }
-})
-</script>
-  
-</body>
+        loadScript(src, function() {
+          // load compiled demo main
+          loadScript(demoSrc);
+        });
+      })();
+    </script>
+    <script async src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>
+  </body>
 </html>
