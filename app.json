@@ -26,7 +26,11 @@
           "title": "test 3",
           "url": "https://abdersl.github.io/test/3.html",
           "img": "https://www.freepngimg.com/thumb/light/20347-4-light-transparent-image.png"
-
+        },
+        "page3": {
+          "title": "test 3",
+          "url": "https://abdersl.github.io/test/tettt.html",
+          "img": "https://www.freepngimg.com/thumb/light/20347-4-light-transparent-image.png"
         }
       }
 }
