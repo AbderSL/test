@@ -1,106 +1,158 @@
-<html>
-
-
-<body lang=FR>
-
-<div class=Section1>
-
-<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
-text-align:center;line-height:normal;background:white'><b><span
-style='font-size:24.0pt;font-family:"Georgia","serif";color:#0099FF'>AQUILA TV
-- Online Streaming - Live TV</span></b></p>
-
-
-<p class=MsoNormal align=center style='text-align:center'><span dir=RTL></span><span
-lang=AR-SA dir=RTL style='font-size:13.5pt;line-height:115%;font-family:"Times New Roman","serif";
-color:black'><span dir=RTL></span> &nbsp;</span><b><span style='font-size:9.0pt;
-line-height:115%;font-family:"Tahoma","sans-serif";color:#333333'><br>
-</span></b><b><span style='font-size:12.0pt;line-height:115%;font-family:"Georgia","serif";
-color:#993300;background:white'>2M  TV Live -&nbsp;</span></b><b><span
-lang=AR-SA dir=RTL style='font-size:12.0pt;line-height:115%;font-family:"Times New Roman","serif";
-color:#993300;background:white'>&#1602;&#1606;&#1608;&#1575;&#1578;
-&#1605;&#1594;&#1585;&#1576;&#1610;&#1577;
-&#1605;&#1576;&#1575;&#1588;&#1585;&#1577;</span></b><span
-dir=LTR></span><b><span style='font-size:12.0pt;line-height:115%;font-family:
-"Georgia","serif";color:#993300;background:white'><span dir=LTR></span>&nbsp;-
-2M MAROC Live Streaming<br>
-2M MAROC TV Online<br>
-</span></b><b><span style='font-size:9.0pt;line-height:115%;font-family:"Tahoma","sans-serif";
-color:#333333'><br>
-</span></b><b><span style='font-size:30.0pt;line-height:115%;font-family:"MS UI Gothic","sans-serif";
-color:#3399CC;background:white'>&#10032;&#10032;&#10032;&#10032;&#10032;</span></b></p>
-
-<p class=MsoNormal align=center style='margin-bottom:12.0pt;text-align:center;
-line-height:normal'><b><span lang=AR-SA dir=RTL style='font-size:26.5pt;
-font-family:"Arial","sans-serif";color:#FF0066'>&#1602;&#1606;&#1608;&#1575;&#1578;
-&#1605;&#1594;&#1585;&#1576;&#1610;&#1577;
-&#1605;&#1576;&#1575;&#1588;&#1585;&#1577;</span></b></p>
-
-<p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span
-style='font-size:22.5pt;font-family:"Tahoma","sans-serif";color:red'>2M TV
-LIVE - ONLINE<br>
-2M LIVE STREAMING</span></b></p>
-
-<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
-text-align:center;line-height:normal'><b><span style='font-size:10.5pt;
-font-family:"Tahoma","sans-serif";color:#333333'>Subscribe, Like and Share!</span></b></p>
-
-<p class=MsoNormal align=center style='margin-bottom:12.0pt;text-align:center;
-line-height:normal'><b><span style='font-size:7.5pt;font-family:"Georgia","serif";
-color:#006666'>Veuillez patienter pour le download - Merci !<br>
-Essayez d'actualiser la page en cas de problème</span></b></p>
-
-<p class=MsoNormal align=center style='margin-bottom:12.0pt;text-align:center;
-line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></p>
-
-<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
-text-align:center;line-height:normal'><b><span style='font-size:7.5pt;
-font-family:"Tahoma","sans-serif";color:#333333'><br>
-</span></b><b><span lang=AR-SA dir=RTL style='font-size:12.0pt;font-family:
-"Times New Roman","serif";color:#993300;background:white'>&#1606;&#1593;&#1578;&#1584;&#1585;
-&#1593;&#1604;&#1610; &#1593;&#1583;&#1605; &#1608;&#1580;&#1608;&#1583;
-&#1586;&#1585; &#1578;&#1603;&#1576;&#1610;&#1585;
-&#1575;&#1604;&#1588;&#1575;&#1588;&#1577; &#1608; &#1584;&#1604;&#1603;
-&#1605;&#1606; &#1605;&#1589;&#1583;&#1585; &#1575;&#1604;&#1576;&#1579;</span></b></p>
-</div>
-<html>
-
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Live</title>
-    <script src="hls.min.js" type="application/javascript"></script>
-  </head>
   <body>
-    <video controls="" width="100%" max-width="800%" muted="" loop="" autoplay="" ></video>
+    <video controls="" width="100%" max-width="800%" muted="" loop="" autoplay="" 
+	src="https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8"></video>
     <script>
-      ((source) => {
-        if (typeof Hls == "undefined") return console.error("HLS Not Found");
-        if (!document.querySelector("video")) return;
-        var hls = new Hls();
-        hls.loadSource(source);
-        hls.attachMedia(document.querySelector("video"));
-      })("http://siyatv.herokuapp.com/https://shls-mbc2-prod.shahid.net/mbc2-prod_9.m3u8");
-    </script>
+<script>
+class VideoPlayerController {
+  constructor(element) {
+    this.$container = element
 
-  </body>
-  </html>
-<div>
-<p class=MsoNormal align=center style='text-align:center'><b><span
-style='font-size:12.0pt;line-height:115%;font-family:"Georgia","serif";
-color:#993300;background:white'>We apologize for not having the fullscreen In
-button from the broadcast source</span></b><b><span style='font-size:7.5pt;
-line-height:115%;font-family:"Tahoma","sans-serif";color:#333333'><br>
-<br>
-</span></b><b><span style='font-size:13.5pt;line-height:115%;font-family:"Tahoma","sans-serif";
-color:#FF0033'>Other Links To WATCH 2M TV LIVE ONLINE</span></b></p>
-<br>
-<br>
-<br>
-.
-</div>
+    if (!this.$container) {
+      console.error('Video container not found. Aborting initialization.')
+      return
+    }
 
-</body>
+    this.$imgContainer = this.$container.querySelector('.js-video-tile-image')
+    this.$vidContainer = this.$container.querySelector('.js-video-element')
 
-</html>
+    this.userControls = false
+
+    if (!this.$imgContainer || !this.$vidContainer) {
+      console.error('Video element and/or preview image not found. Aborting.')
+      return
+    }
+
+    this.handlePlay = this.handlePlay.bind(this)
+    this.parsed = false
+
+    this.init()
+  }
+
+  init() {
+    this.$vidContainer.addEventListener('click', (e) => {
+      /**
+       * Having script interaction interfers with playing/pausing as well
+       * as toggling native UI elements
+       */
+      if (!this.userControls) {
+        // Prevent default to avoid play/pause duplication
+        e.preventDefault()
+        this.handlePlay()
+      }
+    })
+
+    this.$vidContainer.addEventListener('ended', () => {
+      VideoPlayerController.showImage(this.$imgContainer)
+      // We need to remove the controls again to make the event listener
+      // work properly in Firefox
+      this.$vidContainer.removeAttribute('controls')
+      // Hand back control to this class
+      this.userControls = false
+    })
+  }
+
+  handlePlay() {
+    // Make the script return if interactions occur while playing the video
+    this.userControls = true
+
+    // Attributes had to be missing from the rendered source to register
+    // the click in Firefox
+    this.$vidContainer.setAttribute('controls', 'true')
+
+    // Set focus() to allow toggling the play state via keyboard in Chrome
+    // Safari does not allow focussing the video event with tabindex, but
+    // native keyboard multimedia controls work
+    // Firefox sets the focus automatically
+    this.$vidContainer.focus()
+
+    try {
+      const hlsSupported = VideoPlayerController.hlsSupported()
+
+      if (hlsSupported || this.parsed) {
+        this.playVideo()
+      } else {
+        const { Hls } = window
+
+        if (Hls) {
+          this.parseHlsManifest()
+        } else {
+          VideoPlayerController.loadLibrary().then(() => {
+            this.parseHlsManifest()
+          })
+        }
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  playVideo() {
+    console.log('HLS – Playing video')
+    VideoPlayerController.hideImage(this.$imgContainer)
+    this.$vidContainer.play().then(() => {
+      console.log('HLS - Video played')
+    })
+  }
+
+  parseHlsManifest() {
+    console.log('HLS – Parsing video manifest')
+    const { Hls } = window
+    const hls = new Hls()
+    const { src } = this.$vidContainer
+
+    hls.loadSource(src)
+    hls.attachMedia(this.$vidContainer)
+    hls.on(Hls.Events.MANIFEST_PARSED, () => {
+      this.parsed = true
+      this.playVideo()
+    })
+  }
+
+  static loadLibrary() {
+    return new Promise((resolve, reject) => {
+      const $s = document.createElement('script')
+      $s.src =
+        'https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.light.min.js'
+
+      $s.onload = () => {
+        resolve()
+      }
+
+      $s.onerror = () => {
+        reject('Failed to load HLS library')
+      }
+
+      document.head.appendChild($s)
+    })
+  }
+
+  static hideImage($img) {
+    $img.classList.add('video-container__image--hidden')
+  }
+
+  static showImage($img) {
+    $img.classList.remove('video-container__image--hidden')
+  }
+
+  static hlsSupported() {
+    const $vid = document.createElement('video')
+
+    return (
+      $vid.canPlayType('application/x-mpegURL codecs="avc1.42E01E"') ||
+      $vid.canPlayType('application/vnd.apple.mpegurl')
+    )
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const $videoContainers = document.querySelectorAll(
+    '.js-inline-video-container'
+  )
+
+  if ($videoContainers) {
+    Array.from($videoContainers).forEach(($container) => {
+      new VideoPlayerController($container)
+    })
+  }
+})
+</script>
