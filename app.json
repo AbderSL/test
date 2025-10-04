@@ -7,12 +7,12 @@
     
     "ads":{
     "ads_type": "UNITY",
-    "bannerId": "ca-app-pub-xxx/yyy",           // قد لا تستخدم هذا إذا Unity
+    "bannerId": "ca-app-pub-xxx/yyy",           
     "interstitialId": "ca-app-pub-xxx/zzz",
     "ironsource_id": "your_ironsource_id",
-    "unity_game_id": "1234567",                  // معرف اللعبة Unity
-    "unity_banner_id": "bannerPlacement",        // معرّف بانر Unity
-    "unity_interstitial_id": "videoPlacement"    // معرّف انترستيتشال Unity
+    "unity_game_id": "1234567",                  
+    "unity_banner_id": "bannerPlacement",        
+    "unity_interstitial_id": "videoPlacement"    
     },
     
     
@@ -35,4 +35,5 @@
         }
       }
 }
+
 
