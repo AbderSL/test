@@ -5,15 +5,13 @@
     },
     
     
-    "ads":{
-    "ads_type": "UNITY",
-    "bannerId": "ca-app-pub-xxx/yyy",           
-    "interstitialId": "ca-app-pub-xxx/zzz",
-    "ironsource_id": "your_ironsource_id",
-    "unity_game_id": "1234567",                  
-    "unity_banner_id": "bannerPlacement",        
-    "unity_interstitial_id": "videoPlacement"    
-    },
+  
+  "ads":{
+     "ads_type": "admob",
+      "bannerId": "ca-app-pub-3940256099942544/6300978111",
+      "interstitialId": "ca-app-pub-3940256099942544/1033173712",
+     "ironsource_id": "xxxx"
+  },
     
     
     "content": {
@@ -35,5 +33,6 @@
         }
       }
 }
+
 
 
